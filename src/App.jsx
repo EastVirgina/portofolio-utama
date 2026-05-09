@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import imgQuoteApp from './assets/quote-app.png.png';
 import imgMiniApi from './assets/mini-api.png.png';
+// Import gambar proyek ketiga (Pastikan file toko-online.png ada di folder src/assets)
+import imgTokoOnline from './assets/toko-online.png';
 
 // Komponen Pembantu untuk Scroll ke Atas otomatis saat pindah halaman
 function ScrollToTop() {
@@ -59,7 +61,9 @@ function HomePage() {
           <span className="hidden md:block h-px bg-gray-200 flex-grow ml-8"></span>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+        {/* Diubah menjadi lg:grid-cols-3 agar 3 proyek berjajar rata ke samping */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
+          
           {/* Card Project 1 */}
           <a href="https://EastVirgina.github.io/react-quote-app/" target="_blank" rel="noreferrer" className="group block outline-none">
             <div className="w-full h-[280px] md:h-[400px] bg-gray-100 rounded-[2rem] flex items-center justify-center overflow-hidden border border-gray-200/60 mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-gray-200/50 group-hover:-translate-y-2 group-focus-visible:ring-4 ring-gray-900">
@@ -72,7 +76,7 @@ function HomePage() {
           </a>
 
           {/* Card Project 2 */}
-          <a href="https://mini-project-react-27hm5ufzn-eastvirginas-projects.vercel.app" target="_blank" rel="noreferrer" className="group block outline-none md:mt-12">
+          <a href="https://mini-project-react-27hm5ufzn-eastvirginas-projects.vercel.app" target="_blank" rel="noreferrer" className="group block outline-none">
             <div className="w-full h-[280px] md:h-[400px] bg-[#0d1117] rounded-[2rem] flex items-center justify-center overflow-hidden border border-gray-800 mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-gray-300/50 group-hover:-translate-y-2 group-focus-visible:ring-4 ring-gray-900">
               <img src={imgMiniApi} alt="Tampilan Mini Project API" className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 scale-100 group-hover:scale-105 transition-all duration-700 ease-out" />
             </div>
@@ -81,6 +85,18 @@ function HomePage() {
               <p className="text-gray-500 font-light leading-relaxed">Simulasi endpoint API yang disederhanakan untuk mendemonstrasikan pengambilan dan pengelolaan data asinkron pada front-end.</p>
             </div>
           </a>
+
+          {/* Card Project 3: Web Toko Online */}
+          <a href="https://toko-online-b8w2tz3fw-eastvirginas-projects.vercel.app/" target="_blank" rel="noreferrer" className="group block outline-none">
+            <div className="w-full h-[280px] md:h-[400px] bg-gray-50 rounded-[2rem] flex items-center justify-center overflow-hidden border border-gray-200/60 mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-gray-200/50 group-hover:-translate-y-2 group-focus-visible:ring-4 ring-gray-900">
+              <img src={imgTokoOnline} alt="Tampilan Web Toko Online" className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 ease-out" />
+            </div>
+            <div className="px-2">
+              <h4 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Web Toko Online</h4>
+              <p className="text-gray-500 font-light leading-relaxed">Aplikasi web e-commerce modern dan responsif yang dibangun sebagai proyek portofolio. Fitur-fiturnya meliputi penelusuran produk, pencarian & penyaringan, keranjang belanja yang berfungsi penuh dengan penyimpanan permanen, dan desain UI/UX yang bersih.</p>
+            </div>
+          </a>
+
         </div>
       </section>
     </div>
